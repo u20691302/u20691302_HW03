@@ -1,0 +1,58 @@
+﻿@using u20691302_HW03.Models;
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1 class="card-title">Media Manager</h1>
+<h4 class="card-subtitle mb-2 text-muted">Taberer Applications</h4>
+<div clas="container" style="background-color: #292b2c; color: white; padding: 25px ">
+    <div class="row">
+        <div class="col-sm-8">
+
+            <!--Bootstrap Card-->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Description</h3>
+                    <hr />
+                    <p class="card-text">This is an application to manage media.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+
+            <!--Bootstrap Card-->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Option Selection</h3>
+                    <hr />
+
+                    @using (Html.BeginForm("Home", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                            <div>
+                                <input class="form-check-input" type="radio" name="FileType" value="1">
+                                <label class="form-check-label">Document</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="radio" name="FileType" value="2">
+                                <label class="form-check-label">Image</label>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="radio" name="FileType" value="3">
+                                <label class="form-check-label">Video</label>
+                            </div><br>
+
+                            <input type="file" name="files" class="btn btn-info">
+                            <br>
+                            <input class="btn btn-success" type="submit" value="Upload">
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
