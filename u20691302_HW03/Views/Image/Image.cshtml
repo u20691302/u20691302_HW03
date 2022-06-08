@@ -2,7 +2,7 @@
 @model List<FileModel>
 
 @{
-    ViewBag.Title = "Videos";
+    ViewBag.Title = "";
 }
 
 
@@ -11,17 +11,18 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-3">
+            
 
                 <div class="card">
 
                     <div class="card-body">
                         <div class="gallery">
-                            <a href="~/Resources/Images/@file.Filename"><img src="~/Resources/Images/@file.Filename" class="img-responsive"></a>
+                            <div class="col-md-3">
+                                <a href="~/Resources/Images/@file.Filename"><img src="~/Resources/Images/@file.Filename" class="img-responsive"></a>
+                            </div>
+                            <h4 class="card-title">@file.Filename</h4>
                         </div>
-                        <h4 class="card-title">@file.Filename</h4>
-                    </div>
-                    <div class="card-footer">
+                        <div class="card-footer">
                         <button type="button" class="btn btn-success">
                             @Html.ActionLink("Download", "DownloadFile",
                             new { fileName = file.Filename })

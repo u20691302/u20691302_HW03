@@ -18,7 +18,7 @@ namespace u20691302_HW03.Controllers
         //Declaring variable to storage file path
         string StorageFilePath = "";
 
-        //Action result ot store files in correct location
+        //Action result to store files in correct location
         [HttpPost]
         public ActionResult Home(FormCollection frm, HttpPostedFileBase Files)
         {

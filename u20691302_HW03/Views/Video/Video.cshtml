@@ -11,13 +11,17 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-3">
+            <div class="col-md-3">
 
                 <div class="card">
 
                     <div class="card-body">
                         <div class="gallery">
-                            <a href="~/Resources/Videos/@file.Filename"><img src="~/Resources/Videos/@file.Filename" class="img-responsive"></a>
+                            <a href="~/Resources/Videos/@file.Filename"><video width="320" height="240" controls>
+                                <source src="~/Resources/Videos/@file.Filename" type="video/mp4">
+                                <source src="~/Resources/Videos/@file.Filename" type="video/ogg">
+                                Your browser does not support the video tag.
+                                </video></a>
                         </div>
                         <h4 class="card-title">@file.Filename</h4>
                     </div>
