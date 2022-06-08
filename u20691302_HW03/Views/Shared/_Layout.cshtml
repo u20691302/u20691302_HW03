@@ -6,6 +6,13 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <!-- Below we include the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,9 +27,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Files", "Files", "Home")</li>
-                    <li>@Html.ActionLink("Images", "Images", "Home")</li>
-                    <li>@Html.ActionLink("Videos", "Videos", "Home")</li>
+                    <li>@Html.ActionLink("Files", "File", "File")</li>
+                    <li>@Html.ActionLink("Images", "Image", "Image")</li>
+                    <li>@Html.ActionLink("Videos", "Video", "Video")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
             </div>
@@ -39,5 +46,10 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(".gallery a").fancybox();
+        });
+    </script>
 </body>
 </html>

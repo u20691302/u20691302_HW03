@@ -8,13 +8,13 @@ using System.IO;
 
 namespace u20691302_HW03.Controllers
 {
-    public class FileController : Controller
+    public class ImageController : Controller
     {
-        // GET: File
-        public ActionResult File()
+        // GET: Images
+        public ActionResult Image()
         {
             //Fetch all files in the Folder (Directory).
-            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Resources/Files/"));
+            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Resources/Images/"));
 
             //Copy File names to Model collection.
             //Returns to the list here.
@@ -28,11 +28,11 @@ namespace u20691302_HW03.Controllers
             return View(files);
         }
 
-        public FileResult DownloadFile(string fileName) 
-       
+        public FileResult DownloadFile(string fileName)
+
         {
             //Build the File Path.
-            string path = Server.MapPath("~/Resources/Files/") + fileName;
+            string path = Server.MapPath("~/Resources/Images/") + fileName;
 
             //Read the File data into Byte Array.
             //Use a byte array becasue of octet-stream.
@@ -50,12 +50,12 @@ namespace u20691302_HW03.Controllers
         {
             //Delete requires reading the files and then the allocation of a file path.
             //The file is then deleted based on the identified file path.
-            string path = Server.MapPath("~/Resources/Files/") + fileName;
+            string path = Server.MapPath("~/Resources/Images/") + fileName;
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
             System.IO.File.Delete(path);
 
-            return RedirectToAction("File");
+            return RedirectToAction("Image");
         }
     }
 }

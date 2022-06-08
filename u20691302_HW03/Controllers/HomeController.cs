@@ -23,17 +23,16 @@ namespace u20691302_HW03.Controllers
         public ActionResult Home(FormCollection frm, HttpPostedFileBase Files)
         {
             int RadioValue = int.Parse(frm["FileType"]);
-
             switch (RadioValue)
             {
                 case 1:
-                    StorageFilePath = "~/App_Data/Files";
+                    StorageFilePath = "~/Resources/Files";
                     break;
                 case 2:
-                    StorageFilePath = "~/App_Data/Images";
+                    StorageFilePath = "~/Resources/Images";
                     break;
                 case 3:
-                    StorageFilePath = "~/App_Data/Videos";
+                    StorageFilePath = "~/Resources/Videos";
                     break;
             }
 
@@ -44,22 +43,6 @@ namespace u20691302_HW03.Controllers
                 Files.SaveAs(path);
             }
             return RedirectToAction("Home");
-        }
-
-
-        public ActionResult Files()
-        {
-            return View();
-        }
-
-        public ActionResult Images()
-        {
-            return View();
-        }
-
-        public ActionResult Videos()
-        {
-            return View();
         }
 
         public ActionResult About()

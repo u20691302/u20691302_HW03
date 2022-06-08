@@ -122,6 +122,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,16 +164,18 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <None Include="Views\Home\Files.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
-    <Content Include="Views\Home\Images.cshtml" />
-    <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\File\File.cshtml" />
+    <Content Include="Views\Image\Image.cshtml" />
+    <Content Include="Views\Video\Video.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Files\" />
-    <Folder Include="App_Data\Images\" />
-    <Folder Include="App_Data\Videos\" />
-    <Folder Include="Views\File\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Resources\About Me Picture\" />
+    <Folder Include="Resources\Files\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Videos\" />
+    <Folder Include="Views\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
